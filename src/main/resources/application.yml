@@ -1,0 +1,28 @@
+
+server:
+  port: 8078
+
+spring:
+  application:
+    name: remind-registration-center
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:54321/remind_ibccm?currentSchema=registration_center}
+    username: ${DB_USER:remind}
+    password: ${DB_PASS:remind111}
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+registration:
+  health-check:
+    scheduler:
+      delay: PT3S
+  house-keeping:
+    scheduler:
+      delay: P7D
+  concurrent:
+    max-allowed-concurrent: 1
+
+springdoc:
+  api-docs:
+    path: /api-docs

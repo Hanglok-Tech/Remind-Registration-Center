@@ -1,0 +1,5 @@
+CREATE USER remind WITH PASSWORD 'remind111';
+
+CREATE DATABASE remind_ibccm;
+
+GRANT ALL PRIVILEGES ON DATABASE remind_ibccm TO remind;
